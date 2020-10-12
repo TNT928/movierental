@@ -2,70 +2,166 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
 }
 
-.intro{
-  margin-top: 10em;
-  font-size: 1.4em;
+body{
+  background-color: black;
+  
+}
+@font-face{
+  font-family: 'Blockbusted';
+  src: '../../fonts/Blockbusted.ttf' 
 }
 
-.intro h1{
+.intro {
+  margin-top: 2em;
+  font-size: 40px;
+  color: yellow;
+  font-family: blockbusted;
+
+}
+
+.intro h1 {
   text-align: center;
   padding-bottom: 10%;
+  color:yellow;
+
+  
 }
 
-.container{
+.container {
   margin-top: 10em;
- display: flex;
+  display: flex;
   flex-direction: column;
   width: 50%;
   justify-content: center;
   margin: 0 auto;
+  color: white;
 }
 
-.nav{
+.nav {
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   background-color: blue;
- opacity: .50;
- height: 5em;
 
+  height: 5em;
 }
 
 .nav a {
-font-weight: 300;
-font-size: 1.5em ;
- color: white;
+  font-weight: 300;
+  font-size: 1.5em;
+  color: white;
   padding: 0.45rem;
   margin: 0 0.25rem;
   text-decoration: none;
 }
 
-form{
-  justify-content: center;
+form {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
-  text-align: center;
-  margin-top: 5em;
-  font-size: 1.5em;
-
+  padding: 20px;
 }
 
-form button{
+form button {
   background-color: blue;
-  color:white;
+  color: white;
   font-size: 20px;
-  width:20%;
-  margin: 0 auto;
+  /* width: 20%; */
+  /* margin: 0 auto; */
+  margin: 25px 0 25px 0;
+
   border-radius: 10px;
+  padding: 1rem;
 }
 
+input {
+  height: auto;
+  font-size: 25px;
+  margin-top: 2rem;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
 
+.box {
+  background-color: grey;
+  margin: 0 auto;
+  width: 50%;
+  margin-top: 3em;
+  border-radius: 10px;
+  color: white;
+}
 
+.title {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  margin-top: 10px;
+  align-self: flex-start;
+  font-weight: bold;
+  color: yellow
+}
 
+.pagetitle {
+  display: flex;
+  font-size: 50px;
+  font-weight: bold;
+  color:yellow;
+  margin-left: 30px;
+}
 
+.icon {
+  color: white;
+  margin-left: 20px;
+}
+
+.loginlink{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+p a {
+  margin-left: 10px;
+}
+
+a.blockbuster{
+  font-family: blockbusted;
+  font-size: 56px;
+  color: yellow;
+  font-weight: bolder;
+  letter-spacing: 4px
+  
+}
+
+.fas{
+  margin-left: 10px;
+  color: white;
+}
+
+.poster{
+  display: flex;
+}
+
+.alert{
+  height: 3em;
+  width: 50%;
+  color:white;
+  text-align: center;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.alert.alert-danger{
+  background-color: rgb(157, 52, 52);
+  
+}
