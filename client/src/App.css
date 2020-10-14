@@ -125,9 +125,12 @@ input {
   display: flex;
   text-align: center;
   justify-content: center;
+  color: white;
+  font-size: 20px;
 }
 p a {
   margin-left: 10px;
+  color:yellow;
 }
 
 a.blockbuster{

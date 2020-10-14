@@ -10,7 +10,7 @@ const auth = require('../middleware/auth');
 
 router.get('/',auth, async(req, res) => {
     try {
-        const user = await User.findById(req.user.id)
+        const user = await User.findById(req.user.id).select('-password')
         console.log(req.user.id)
         res.json(user)
     } catch (err) {

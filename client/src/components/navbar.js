@@ -5,7 +5,7 @@ const Navbar = () => {
     return (
        <nav className='nav'>
            <h1>
-           <i class="fas fa-ticket-alt fa-2x" ></i>
+           <i className="fas fa-ticket-alt fa-2x" ></i>
                <Link className='blockbuster' to='/'>Blockbuster Max</Link>
            </h1>
            <ul>

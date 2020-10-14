@@ -5,9 +5,7 @@ const bcrypt = require('bcryptjs');
 const config = require('config');
 const jwt = require('jsonwebtoken');
 const router = express.Router();
-const auth = require('../middleware/auth')
-
-
+const auth = require('../middleware/auth');
 
 // register a user
 router.post(
@@ -40,9 +38,8 @@ router.post(
         password,
       });
 
-    user.password = await bcrypt.hashSync(password, 10)
+      user.password = await bcrypt.hashSync(password, 10);
 
- 
       await user.save();
 
       const payload = {
@@ -56,9 +53,9 @@ router.post(
         config.get('jwtSecret'),
         {expiresIn: 360000},
         (err, token) => {
-          if(err) throw err;
-        
-        res.json(token);
+          if (err) throw err;
+
+          res.json(token);
         }
       );
     } catch (err) {
@@ -67,7 +64,5 @@ router.post(
     }
   }
 );
-
-
 
 module.exports = router;
