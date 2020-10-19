@@ -15,8 +15,8 @@ Alert.propTypes = {
   alerts: PropTypes.array.isRequired,
 };
 
-const reduxState = state => ({
+const mapStateToProps  = state => ({
   alerts: state.Alert
 });
 
-export default connect(reduxState)(Alert);
+export default connect(mapStateToProps )(Alert);

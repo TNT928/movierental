@@ -7,7 +7,7 @@ const axios = require('axios')
 
 
 
-const param = config.get('apikey')
+
 
 
 router.get('/', async(req, res)=>{

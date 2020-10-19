@@ -64,7 +64,7 @@ Login.propTypes = {
   isAuthenticated: PropTypes.bool,
 }
 
-const reduxState = state =>({
+const mapStateToProps  = state =>({
   isAuthenticated : state.auth.isAuthenticated
 })
-export default connect(reduxState, {login})(Login)
+export default connect(mapStateToProps , {login})(Login)

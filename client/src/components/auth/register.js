@@ -83,8 +83,8 @@ Register.propTypes = {
   register: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool,
 }
-const reduxState = state =>({
+const mapStateToProps  = state =>({
   isAuthenticated : state.auth.isAuthenticated
 })
 
-export default connect(reduxState,{setAlert, register})(Register);
+export default connect(mapStateToProps,{setAlert, register})(Register);

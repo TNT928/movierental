@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  
 
 }
 
@@ -46,7 +47,7 @@ body{
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: blue;
+  background-color: rgb(32, 32, 182);
 
   height: 5em;
 }
@@ -168,3 +169,7 @@ a.blockbuster{
   background-color: rgb(157, 52, 52);
   
 }
+
+/* .hide-sm {
+  display: none;
+} */
