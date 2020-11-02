@@ -1,18 +1,13 @@
 const express = require('express')
 const Movie = require('../models/Movie')
 const router = express.Router()
-const config = require('config')
 const auth = require('../middleware/auth')
-const axios = require('axios')
+const cors = require('cors')
 
 
 
-
-
-
-router.get('/', async(req, res)=>{
-
+router.get('/profile', auth, (req, res, next)=>{
+    movie = new Movie
 })
-
 
 module.exports = router

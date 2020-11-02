@@ -1,9 +1,10 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React, { Fragment } from 'react';
+import TrendingMovies from './Movies/trendingMovies'
+
 
 const Landing = () => {
   return (
-    <section className="container">
+    <Fragment> <section className="container">
      
       <div className="intro">
         <h1>Welcome to Blockbuster Max!</h1>
@@ -13,7 +14,11 @@ const Landing = () => {
           latest movies to watch in the comfort of their own home. No late fees!
         </p>
       </div>
+
+       
     </section>
+   <div className='trendingmovies-landing'><TrendingMovies/></div></Fragment>
+   
   );
 };
 

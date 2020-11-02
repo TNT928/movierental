@@ -1,9 +1,12 @@
 const express = require('express');
 const connectDB = require('./config/db');
 
+
 const app = express();
 
 connectDB();
+
+
 
 app.use(express.json({extended: false}));
 
@@ -15,6 +18,8 @@ app.get('/', (req, res) => res.send('Api running'));
 app.use('/register', require('./routes/register'));
 app.use('/cart', require('./routes/cart'));
 app.use('/login', require('./routes/login'));
+app.use('/profile', require('./routes/profile'));
+app.use('/wishlist', require('./routes/wishlist'))
 
 const PORT = process.env.PORT || 5000;
 

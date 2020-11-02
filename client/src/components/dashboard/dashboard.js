@@ -1,22 +1,15 @@
-import React,{Fragment} from 'react'
-import PropTypes from 'prop-types'
-import {connect} from 'react-redux'
+import React, {Fragment} from 'react';
+import SearchForm from './searchForm';
 
-import SearchForm from './searchForm'
+export const Dashboard = ({movies}) => {
 
-
-const Dashboard = ({}) => {
-   
-   
 
     return (
-       <Fragment>
-          <h1>
-              <SearchForm/>
-          </h1>
-       </Fragment>
-    )
-}
+      <Fragment>
+      <SearchForm/>
+      </Fragment>
+    );
+  
+ 
 
-
-export default (Dashboard)
+};

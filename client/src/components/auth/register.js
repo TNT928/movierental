@@ -34,7 +34,7 @@ const Register = ({setAlert, register ,isAuthenticated}) => {
   }
   return (
     <Fragment>
-      <p className='pagetitle'>Register</p>
+      
     <p className='title'>Sign up for an account</p>
       <div className="box">
         <form onSubmit={(e) => onSubmit(e)}>

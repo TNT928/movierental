@@ -1,0 +1,92 @@
+.toolbar{
+    width: 100%;
+    position: fixed;
+    background-color: blue;
+    top: 0;
+    height:64px;
+    left: 0;
+}
+
+.nav{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 1rem;
+}
+
+ .nav-right ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.brand a{
+    color: yellow;
+    text-decoration: none;
+    font-size: 28px;
+    font-family: 'Blockbusted';
+    letter-spacing: .1em;
+    padding-left: 10px;
+   
+   
+   
+
+  
+}
+.hamburger{
+    font-size: 2em;
+}
+
+
+.nav-right a{
+    padding: 0 0.5rem;
+    color: yellow;
+    text-decoration: none;
+    font-family: 'Blockbusted';
+    letter-spacing: .2em;
+    display: none;
+
+}
+
+.spacer{
+    flex: 1;
+}
+
+@media screen and (min-width: 768px){
+    .brand a{
+        color: yellow;
+        text-decoration: none;
+        font-size: 35px;
+        font-family: 'Blockbusted';
+        letter-spacing: .1em;
+        padding: 20px;
+        display: revert;
+        
+    }
+
+    .nav-right a{
+        padding: 0 0.5rem;
+        color: yellow;
+        text-decoration: none;
+        font-family: 'Blockbusted';
+        letter-spacing: .2em;
+        display: revert;
+       
+    
+    }
+
+    .hamburger{
+        display: none;
+    }
+
+   
+
+   
+
+
+}
+
+
+

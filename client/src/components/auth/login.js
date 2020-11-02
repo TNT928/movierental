@@ -25,11 +25,11 @@ const Login = ({login, isAuthenticated}) => {
 
   // redirect if logged in 
   if(isAuthenticated){
-    return <Redirect to='/dashboard'/>
+    return <Redirect to='/profile'/>
   }
   return (
     <Fragment>
-    <p className='pagetitle'>Sign In</p>
+  
     <p className='title'>Sign into your account</p>
       <div className="box">
         <form onSubmit={(e) => onSubmit(e)}>
