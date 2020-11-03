@@ -7,10 +7,10 @@ import axios from 'axios';
 
 
 
-const MovieCard = ({movie, saveMovie, auth: {isAuthenticated}}) => {
+const MovieCard = ({movie, saveMovie,user, auth: {isAuthenticated}}) => {
 
   const options = {
-    user:
+    user: user,
     title: movie.title,
     summary: movie.overview,
     image:movie.poster_path,
@@ -21,6 +21,7 @@ const MovieCard = ({movie, saveMovie, auth: {isAuthenticated}}) => {
   const onSubmit =  async() =>{
    await axios.post('/wishlist', options )
     saveMovie(movie)
+   
   }
 
   return (
@@ -60,7 +61,8 @@ const MovieCard = ({movie, saveMovie, auth: {isAuthenticated}}) => {
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
-  watchlist: state.movies.watchlist
+  watchlist: state.movies.watchlist,
+  user: state.auth.user
   // singleMovie: state.movies.movies,
 
   

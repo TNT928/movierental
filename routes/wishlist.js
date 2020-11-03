@@ -10,7 +10,6 @@ const {title, summary, image, movieScore} = req.body
 
     
 movie = new Movie({
-        user,
         title, 
         summary,
         image,
