@@ -22,7 +22,7 @@ export default function (state = initialState, action){
             case GET_WISHLIST:
                 return{...state, wishlist: payload, ...state.wishlist}
         case SAVE_MOVIE:
-            return {...state, wishlist:payload, ...state.wishlist}
+            return {...state, wishlist:[payload, ...state.wishlist]}
         case MOVIE_ERROR:
             return{...state, error: payload, loading: false}
 

@@ -13,7 +13,7 @@ const Wishlistcard = ({movie}) => {
                 <img
                 src={`https://image.tmdb.org/t/p/w500/${movie.image}`}
               />
-                <p >{movie.overview}
+                <p >{movie.summary}
                 {movie.runtime}
                 </p>
               </li>
