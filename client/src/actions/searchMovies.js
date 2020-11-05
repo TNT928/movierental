@@ -1,4 +1,4 @@
-import {GET_MOVIES, MOVIE_ERROR, SEARCH_MOVIES, GET_SINGLE_MOVIE, SAVE_MOVIE} from './types';
+import {GET_MOVIES, MOVIE_ERROR, SEARCH_MOVIES, GET_SINGLE_MOVIE, SAVE_MOVIE, GET_WISHLIST} from './types';
 import axios from 'axios';
 import {setAlert} from './alert';
 
@@ -25,6 +25,19 @@ export const saveMovie = (movie) =>  async (dispatch) => {
     payload: movie,
   });
 };
+
+
+export const getWishlist = () => async dispatch => {
+  try {
+    const res = await axios.get('/wishlist')
+    dispatch({
+      type: GET_WISHLIST,
+      payload: res.data
+    })
+  } catch (error) {
+    
+  }
+}
 
 export const getMovies = (text) => async (dispatch) => {
   try {

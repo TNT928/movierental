@@ -11,6 +11,7 @@ const MovieCard = ({movie, saveMovie,user, auth: {isAuthenticated}}) => {
 
   const options = {
     user: user,
+    id: movie.id,
     title: movie.title,
     summary: movie.overview,
     image:movie.poster_path,

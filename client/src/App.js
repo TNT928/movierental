@@ -15,6 +15,7 @@ import store from './store';
 import './App.css';
 import {loadUser} from './actions/auth';
 import setAuthToken from './utilties/setAuthToken';
+import Wishlist from './components/Movies/Wishlist';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -56,6 +57,7 @@ function App() {
             <Route exact path="/register" component={Register} />
             <PrivateRoute exact path="/profile" component={Dashboard} />
             <PrivateRoute exact path="/movie/:id" component={Movie} />
+            <PrivateRoute exact path="/wishlist" component={Wishlist} />
           </Switch>
         </Fragment>
       </Router>

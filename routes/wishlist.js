@@ -6,11 +6,13 @@ const auth = require('../middleware/auth');
 
 router.post('/', async (req, res)=>{
     
-const {title, summary, image, movieScore} = req.body
+const {title, summary, image, movieScore, user, id} = req.body
 
     
 movie = new Movie({
+        user,
         title, 
+        id,
         summary,
         image,
         movieScore

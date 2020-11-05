@@ -1,21 +1,18 @@
 import React, {Fragment} from 'react'
 import {connect} from 'react-redux'
-import saveMovie from '../../actions/searchMovies'
-import { Fragment } from 'react'
 
-const Watchlist = ({movie}) => {
-    
-    
+const Wishlistcard = ({movie}) => {
     return (
-        <Fragment>
+        <div>
+             <Fragment>
         <div className="movie">
           <div>
             <ul >
               <li >
                 <h1>{movie.title}</h1>
                 <img
-                  src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                />
+                src={`https://image.tmdb.org/t/p/w500/${movie.image}`}
+              />
                 <p >{movie.overview}
                 {movie.runtime}
                 </p>
@@ -24,12 +21,13 @@ const Watchlist = ({movie}) => {
           </div>
         </div>
       </Fragment>
+        </div>
     )
 }
 
-const mapStateToProps = state =>{
-    movie: state.movies.movie
-}
 
+// const mapStateToProps = state =({
+//     movie: state.movies.wishlist
+// })
 
-export default connect({saveMovie})(Watchlist)
+export default  Wishlistcard
