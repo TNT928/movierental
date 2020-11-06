@@ -1,7 +1,8 @@
 import React, {Fragment} from 'react'
 import {connect} from 'react-redux'
+import {removeMovie} from '../../actions/searchMovies'
 
-const Wishlistcard = ({movie}) => {
+const Wishlistcard = ({movie, removeMovie}) => {
     return (
         <div>
              <Fragment>
@@ -11,11 +12,10 @@ const Wishlistcard = ({movie}) => {
               <li >
                 <h1>{movie.title}</h1>
                 <img
-                src={`https://image.tmdb.org/t/p/w500/${movie.image}`}
+                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
               />
-                <p >{movie.summary}
-                {movie.runtime}
-                </p>
+                <p >{movie.overview}</p>
+                <button onClick={()=> removeMovie(movie.id)}>Remove from list</button>
               </li>
             </ul>
           </div>
@@ -30,4 +30,4 @@ const Wishlistcard = ({movie}) => {
 //     movie: state.movies.wishlist
 // })
 
-export default  Wishlistcard
+export default  connect(null,{removeMovie})(Wishlistcard)

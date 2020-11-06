@@ -1,4 +1,4 @@
-import {GET_MOVIES, MOVIE_ERROR, SEARCH_MOVIES, GET_SINGLE_MOVIE, SAVE_MOVIE, GET_WISHLIST} from './types';
+import {GET_MOVIES, MOVIE_ERROR, SEARCH_MOVIES, GET_SINGLE_MOVIE, SAVE_MOVIE, GET_WISHLIST, REMOVE_MOVIE} from './types';
 import axios from 'axios';
 import {setAlert} from './alert';
 
@@ -9,22 +9,35 @@ export const searchMovies = (text) => (dispatch) => {
   });
 };
 
-export const saveMovie = (movie) =>  async (dispatch) => {
+export const saveMovie = (options) =>  async (dispatch) => {
 
-//   const options = {
-//     title,
-//     summary,
-//     image,
-//     movieScore
-//   }
-  
-// const res = await axios.post('/wishlist', options   )
-
+try {
+  await axios.post('/wishlist', options) 
   dispatch({
     type: SAVE_MOVIE,
-    payload: movie,
+    payload: options,
   });
+  
+} catch (error) {
+  console.error(error.message)
+  
+}
+
+ 
 };
+
+export const removeMovie = (id) => async dispatch => {
+  try {
+    await axios.delete(`/wishlist/${id}/delete`)
+    dispatch({
+      type: REMOVE_MOVIE,
+      payload:id
+    })
+  } catch (error) {
+    console.log('unable to delete movie')
+    console.error(error)
+  }
+}
 
 
 export const getWishlist = () => async dispatch => {

@@ -7,19 +7,20 @@ const MovieSchema = new mongoose.Schema({
         type: Schema.Types.ObjectId,
         ref: 'user',
       },
-      id:{
-          type: String
-      },
+    id:{
+        type:String,
+    },
+    
     title:{
         type:String,
     },
-    image:{
+    poster_path:{
         type: String
     },
-    summary:{
+    overview:{
         type:String,
     },
-    movieScore:{
+    vote_average:{
         type: String
     }
     

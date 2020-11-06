@@ -1,27 +1,30 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, useEffect} from 'react';
 import {Link} from 'react-router-dom'
 import {getSingleMovie, saveMovie} from '../../actions/searchMovies'
 import {connect} from 'react-redux'
-
-import axios from 'axios';
-
+import {getWishlist} from '../../actions/searchMovies'
 
 
-const MovieCard = ({movie, saveMovie,user, auth: {isAuthenticated}}) => {
+
+const MovieCard = ({movie,saveMovie,user, getWishlist, wishlist, auth: {isAuthenticated}}) => {
 
   const options = {
     user: user,
-    id: movie.id,
+    id:movie.id,
     title: movie.title,
-    summary: movie.overview,
-    image:movie.poster_path,
-    movieScore: movie.vote_average
+    overview: movie.overview,
+    poster_path:movie.poster_path,
+    vote_average: movie.vote_average
   }
  
+      const savedMovie = wishlist.find(m => m.id === movie.id )
+      const disabled = savedMovie ? true : false
+  
 
-  const onSubmit =  async() =>{
-   await axios.post('/wishlist', options )
-    saveMovie(movie)
+
+  const onSubmit = () =>{
+    
+    saveMovie(options)
    
   }
 
@@ -45,7 +48,7 @@ const MovieCard = ({movie, saveMovie,user, auth: {isAuthenticated}}) => {
 
                  {isAuthenticated ?
               <div>
-                <button className='wishlist' onClick={onSubmit}>Save Movie</button>
+                <button disabled={disabled} className='wishlist' onClick={onSubmit}>Save Movie</button>
                 <Link className="wishlist" to={'/movie/'+ movie.id} >Get Details</Link>
               </div> : null } 
               </div>
@@ -62,7 +65,7 @@ const MovieCard = ({movie, saveMovie,user, auth: {isAuthenticated}}) => {
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
-  watchlist: state.movies.watchlist,
+  wishlist: state.movies.wishlist,
   user: state.auth.user
   // singleMovie: state.movies.movies,
 
@@ -70,4 +73,4 @@ const mapStateToProps = (state) => ({
 });
 
 
-export default connect(mapStateToProps, {getSingleMovie, saveMovie} )(MovieCard);
+export default connect(mapStateToProps, {getSingleMovie, saveMovie, getWishlist} )(MovieCard);

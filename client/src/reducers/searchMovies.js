@@ -1,4 +1,4 @@
-import {GET_MOVIES, MOVIE_ERROR, SEARCH_MOVIES, GET_SINGLE_MOVIE, SAVE_MOVIE, GET_WISHLIST} from '../actions/types'
+import {GET_MOVIES, MOVIE_ERROR, SEARCH_MOVIES, GET_SINGLE_MOVIE, SAVE_MOVIE, GET_WISHLIST, REMOVE_MOVIE} from '../actions/types'
 
 const initialState = {
     text:'',
@@ -23,6 +23,8 @@ export default function (state = initialState, action){
                 return{...state, wishlist: payload, ...state.wishlist}
         case SAVE_MOVIE:
             return {...state, wishlist:[payload, ...state.wishlist]}
+        case REMOVE_MOVIE:
+            return{...state, wishlist:state.wishlist.filter(movie => movie.id !== payload)}
         case MOVIE_ERROR:
             return{...state, error: payload, loading: false}
 

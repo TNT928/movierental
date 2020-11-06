@@ -1,11 +1,17 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {searchMovies, getMovies} from '../../actions/searchMovies';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import MovieCard from '../Movies/movieCard';
+import {getWishlist} from '../../actions/searchMovies'
 
 
-export const SearchForm = ({searchMovies, getMovies, text, movies, results}) => {
+export const SearchForm = ({searchMovies, getMovies, text, movies, results, getWishlist}) => {
+
+useEffect(()=>{
+  getWishlist()
+},[getWishlist])
+
   const onChange = (e) => {
     searchMovies(e.target.value);
   };
@@ -45,4 +51,4 @@ const mapStateToProps = (state) => ({
   movies: state.movies.searchResults,
 });
 
-export default connect(mapStateToProps, {searchMovies, getMovies})(SearchForm);
+export default connect(mapStateToProps, {searchMovies, getMovies, getWishlist})(SearchForm);

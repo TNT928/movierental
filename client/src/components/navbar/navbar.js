@@ -2,10 +2,11 @@ import React, {Fragment, useState} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+import {getWishlist} from '../../actions/searchMovies'
 import {logout} from '../../actions/auth';
 import './navbar.css';
 
-const Navbar = ({auth: {isAuthenticated, loading}, logout,handleClick}) => {
+const Navbar = ({auth: {isAuthenticated, loading}, logout,handleClick, getWishlist}) => {
   const authLinks = (
     <header className="toolbar">
       <nav className="nav">
@@ -87,4 +88,4 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 });
 
-export default connect(mapStateToProps, {logout})(Navbar);
+export default connect(mapStateToProps, {logout, getWishlist})(Navbar);

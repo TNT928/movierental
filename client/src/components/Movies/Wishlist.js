@@ -10,7 +10,7 @@ const Wishlist = ({movies, getWishlist}) => {
 
   useEffect( () => {
     getWishlist(movies)
-    console.log(movies)
+   
   },[getWishlist])
     
 
