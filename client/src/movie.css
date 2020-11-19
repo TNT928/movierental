@@ -1,11 +1,12 @@
 .movie{
     display: flex;
-    width: 50%;
+    width: auto;
     color: white;
     justify-content: center;
     text-align: center;
-    margin: 0 auto;
+    margin: 14px;
     background-color: grey;
     margin-top: 6rem;
     font-size: 30px;
+    border-radius: 10px;
 }

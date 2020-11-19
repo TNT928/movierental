@@ -22,6 +22,14 @@ const SideDrawer = ({auth: {isAuthenticated, loading}, logout}) => {
           <i className="fas fa-sign-out-alt"></i>{' '}
           <span className="hide-sm">Logout</span>
         </Link>
+        <Link to='/profile'>
+            <i className="fas fa-search"></i>
+              Search
+            </Link>
+            <Link to='/wishlist'>
+            <i className="fas fa-bookmark"></i> 
+            My wishlist
+            </Link>
       </ul>
     </nav>
   );
