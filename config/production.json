@@ -1,5 +1,0 @@
-{
-    "mongoURI" : "mongodb+srv://TNT928:Batman748@devconnector.xcxqo.mongodb.net/<dbname>?retryWrites=true&w=majority",
-    "apikey"    : "b1d71b9e30e9e87132c7a808864f227c",
-    "jwtSecret" : "itsasecret"
-}
