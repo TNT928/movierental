@@ -15,6 +15,8 @@ const Register = ({setAlert, register ,isAuthenticated}) => {
     password2: '',
   });
 
+  const [hidden, setHidden] = useState(true)
+
   const {name, email, password, password2} = formData;
   const onChange = (e) =>
     setFormData({...formData, [e.target.name]: e.target.value});
@@ -28,6 +30,11 @@ const Register = ({setAlert, register ,isAuthenticated}) => {
         register({name, email, password})
     }
   };
+
+  const onClick = () =>{
+    setHidden(!hidden)
+    console.log('clicked')
+  } 
 
   if(isAuthenticated){
     return <Redirect to='/dashboard'/>
@@ -46,27 +53,30 @@ const Register = ({setAlert, register ,isAuthenticated}) => {
             type="text"
       
           />
-          <input
+          <input 
             placeholder="Email"
             value={email}
             onChange={(e) => onChange(e)}
             name="email"
             type="email"
           />
-          <input
+          <i className="far fa-2x fa-eye eyecon" onClick={onClick}></i>
+          <input className='password'
             placeholder="Password"
             value={password}
             onChange={(e) => onChange(e)}
             name="password"
-            type="text"
+            type={hidden ? 'password' :'text' }
            
           />
+          <i className="far fa-2x fa-eye eyecon" onClick={onClick}></i>
           <input
+          className='password'
             placeholder="Confirm Password"
             value={password2}
             onChange={(e) => onChange(e)}
             name="password2"
-            type="text"
+            type={hidden ? 'password' :'text' }
            
           />
           <button value='Register'>Sign Up</button>

@@ -6,7 +6,7 @@ import '../../movie.css'
 const Movie = ({getSingleMovie, match, movie}) => {
   useEffect(() => {
     getSingleMovie(match.params.id);
-    console.log(movie);
+    window.scrollTo(0,0)
   }, []);
 
   return (
@@ -20,7 +20,7 @@ const Movie = ({getSingleMovie, match, movie}) => {
                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
               />
               <p >{movie.overview}
-              {movie.runtime}
+              
               </p>
             </li>
           </ul>

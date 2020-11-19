@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import {login} from '../../actions/auth'
 import { Link, Redirect } from 'react-router-dom';
+import { getWishlist } from '../../actions/searchMovies';
 
 
 
@@ -14,6 +15,10 @@ const Login = ({login, isAuthenticated}) => {
     
   });
 
+  const [hidden, setHidden] = useState(true)
+
+ 
+
   const { email, password,} = formData;
   const onChange = (e) =>
     setFormData({...formData, [e.target.name]: e.target.value});
@@ -21,11 +26,17 @@ const Login = ({login, isAuthenticated}) => {
   const onSubmit = async (e) => {
     e.preventDefault();
      login(email, password)
+     getWishlist()
   };
+
+  const onClick = () =>{
+    setHidden(!hidden)
+    console.log('clicked')
+  } 
 
   // redirect if logged in 
   if(isAuthenticated){
-    return <Redirect to='/profile'/>
+    return <Redirect to='/'/>
   }
   return (
     <Fragment>
@@ -41,12 +52,15 @@ const Login = ({login, isAuthenticated}) => {
             name="email"
             type="email"
           />
-          <input
+
+        <i className="far fa-2x fa-eye eyecon" onClick={onClick}></i>
+          <input className='password'
+           
             placeholder="Password"
             value={password}
             onChange={(e) => onChange(e)}
             name="password"
-            type="text"
+            type={hidden ? 'password' :'text' }
             minLength="6"
           />
          
@@ -67,4 +81,4 @@ Login.propTypes = {
 const mapStateToProps  = state =>({
   isAuthenticated : state.auth.isAuthenticated
 })
-export default connect(mapStateToProps , {login})(Login)
+export default connect(mapStateToProps , {login, getWishlist})(Login)

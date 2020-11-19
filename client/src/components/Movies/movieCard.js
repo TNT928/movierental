@@ -16,6 +16,7 @@ const MovieCard = ({movie,saveMovie,user, getWishlist, wishlist, auth: {isAuthen
     poster_path:movie.poster_path,
     vote_average: movie.vote_average
   }
+
  
       const savedMovie = wishlist.find(m => m.id === movie.id )
       const disabled = savedMovie ? true : false
@@ -48,7 +49,7 @@ const MovieCard = ({movie,saveMovie,user, getWishlist, wishlist, auth: {isAuthen
 
                  {isAuthenticated ?
               <div>
-                <button disabled={disabled} className='wishlist' onClick={onSubmit}>Save Movie</button>
+                <button disabled={disabled} className={disabled ? 'clicked':'wishlist'  } onClick={onSubmit}>Save Movie</button>
                 <Link className="wishlist" to={'/movie/'+ movie.id} >Get Details</Link>
               </div> : null } 
               </div>

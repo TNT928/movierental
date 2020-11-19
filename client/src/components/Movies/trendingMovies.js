@@ -4,10 +4,12 @@ import React, {useEffect, Fragment} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import { SearchForm } from '../dashboard/searchForm';
+import { getWishlist } from '../../actions/searchMovies';
 
 const TrendingMovies = ({loadMovies, movies}) => {
   useEffect(() => {
     loadMovies(movies);
+    getWishlist()
   }, []);
 
   let content;
@@ -28,4 +30,4 @@ const mapStateToProps = (state) => ({
   movies: state.movie.movies,
 });
 
-export default connect(mapStateToProps, {loadMovies})(TrendingMovies);
+export default connect(mapStateToProps, {loadMovies, getWishlist})(TrendingMovies);

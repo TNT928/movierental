@@ -154,6 +154,29 @@ li img {
   margin-left: 10px;
   padding: 8px;
 }
+.wishlist:hover {
+  background-color: rgb(0 0 255);
+  color: yellow;
+  text-decoration: none;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 20px;
+  align-items: center;
+  margin-left: 10px;
+  padding: 8px;
+}
+
+.clicked{
+  background-color: red;
+  color: white;
+  text-decoration: none;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 20px;
+  align-items: center;
+  margin-left: 10px;
+  padding: 8px;
+}
 
 .trendingmovies {
   display: flex;
@@ -162,16 +185,16 @@ li img {
 }
 
 .heading {
-    font-size: 3em;
-    font-family: blockbusted;
-    color: yellow;
-    text-align: center;
-    justify-content: center;
-    display: flex;
-    position: static;
-    width: 75%;
-    margin: 0 auto;
-    margin-top:3em
+  font-size: 3em;
+  font-family: blockbusted;
+  color: yellow;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  position: static;
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 3em;
 }
 
 .moviecard {
@@ -191,7 +214,7 @@ li img {
   align-items: center;
   color: white;
   flex-direction: column;
-  
+
   list-style: none;
 }
 
@@ -230,8 +253,76 @@ li img {
   border-bottom-right-radius: 3px;
 }
 
-@media screen and (min-width: 768px){
-  .box{
-    width: 50%
+.wishlistheading {
+  font-family: blockbusted;
+  margin-top: 2em;
+  display: flex;
+  text-align: center;
+  padding-bottom: 1em;
+  justify-content: center;
+  color: yellow;
+  font-size: 5em;
+
+}
+
+.eyecon{
+  position: relative;
+    z-index: 1;
+    left: 2px;
+    top: 46px;
+    color: grey;
+    cursor: pointer;
+    width: 0;
+}
+.password{
+  margin: 0;
+  padding-left: 2em;
+}
+
+.poster{
+  width: 250px;
+  display: flex;
+  justify-content:space-between ;
+  margin:20px 0 20px 20px
+}
+
+.modal{
+  margin-top: -60em;
+  justify-content: center;
+  width: 85%;
+  background-color: grey;
+  display: flex;
+  height: 50%;
+  overflow-y: scroll;
+  position: relative;
+}
+
+.defaultHidden{
+  display: none;
+}
+
+.backgroundOverlay{
+    height: 100%;
+    top: 4em;
+    position: fixed;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .8);
+}
+
+
+.modalContainer{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 70em;
+}
+
+.modalClosed{
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .box {
+    width: 50%;
   }
 }
