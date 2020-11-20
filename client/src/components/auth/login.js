@@ -3,11 +3,11 @@ import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import {login} from '../../actions/auth'
 import { Link, Redirect } from 'react-router-dom';
-import { getWishlist } from '../../actions/searchMovies';
 
 
 
-const Login = ({login, isAuthenticated, getWishlist}) => {
+
+const Login = ({login, isAuthenticated}) => {
   const [formData, setFormData] = useState({
    
     email: '',
@@ -26,7 +26,7 @@ const Login = ({login, isAuthenticated, getWishlist}) => {
   const onSubmit = async (e) => {
     e.preventDefault();
      login(email, password)
-     getWishlist()
+   
   };
 
   const onClick = () =>{
@@ -81,4 +81,4 @@ Login.propTypes = {
 const mapStateToProps  = state =>({
   isAuthenticated : state.auth.isAuthenticated
 })
-export default connect(mapStateToProps , {login, getWishlist})(Login)
+export default connect(mapStateToProps , {login})(Login)
