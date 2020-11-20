@@ -7,7 +7,7 @@ import { getWishlist } from '../../actions/searchMovies';
 
 
 
-const Login = ({login, isAuthenticated}) => {
+const Login = ({login, isAuthenticated, getWishlist}) => {
   const [formData, setFormData] = useState({
    
     email: '',

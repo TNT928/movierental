@@ -29,6 +29,7 @@ router.get('/' , auth, async (req, res)=>{
        res.json(movies)
    } catch (error) {
        console.error(error.message)
+       console.log(error.message)
    }
 }) 
 

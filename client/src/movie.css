@@ -10,3 +10,18 @@
     font-size: 30px;
     border-radius: 10px;
 }
+ 
+
+@media screen and (min-width: 768px) {
+  .movie {
+    width: 50%;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    margin: 14px;
+    background-color: grey;
+    margin-top: 6rem;
+    font-size: 30px;
+    border-radius: 10px;
+  }
+}
