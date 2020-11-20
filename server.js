@@ -15,6 +15,7 @@ app.use('/register', require('./routes/register'));
 app.use('/cart', require('./routes/cart'));
 app.use('/login', require('./routes/login'));
 app.use('/profile', require('./routes/profile'));
+app.use('/movies', require('./routes/movies'));
 app.use('/wishlist', require('./routes/wishlist'))
 
 if(process.env.NODE_ENV === 'production'){
